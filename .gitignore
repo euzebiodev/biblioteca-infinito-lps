@@ -1,0 +1,12 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Server/editor backups
+*.before-*
+*.bak
+*.tmp
+
+# Logs
+*.log

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Music of Cosmos</title>
+<style>
+:root {
+  --paper: #f4ead5;
+  --paper-deep: #ddc297;
+  --ink: #151310;
+  --muted: #615744;
+  --rule: #9d7a44;
+  --accent: #b13a32;
+  --blue: #2259a8;
+  --space: #17191f;
+}
+* { box-sizing: border-box; }
+html { background: var(--space); }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.56;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,.42) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 10%, rgba(177,58,50,.18), transparent 24%),
+    radial-gradient(circle at 20% 82%, rgba(34,89,168,.18), transparent 26%),
+    linear-gradient(90deg, rgba(255,255,255,.24), rgba(255,255,255,0) 26%, rgba(0,0,0,.08) 62%, rgba(255,255,255,.13)),
+    var(--paper);
+  background-size: 120px 120px, auto, auto, auto, auto;
+}
+.lp-insert {
+  width: min(1180px, calc(100% - 36px));
+  margin: 22px auto;
+  padding: clamp(24px, 4vw, 54px);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.62), rgba(255,255,255,0) 38%),
+    repeating-linear-gradient(0deg, rgba(65,49,28,.04) 0 1px, transparent 1px 7px),
+    var(--paper);
+  border: 1px solid rgba(76,55,31,.38);
+  box-shadow: 0 20px 50px rgba(0,0,0,.38), inset 0 0 0 10px rgba(255,255,255,.16);
+}
+.lp-kicker {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font: 700 13px/1.2 Arial, sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.lp-title {
+  margin: 0;
+  padding: 0 0 16px;
+  border-bottom: 3px double var(--rule);
+  color: #100f0d;
+  font-size: clamp(39px, 7.2vw, 86px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: .95;
+}
+.lp-subtitle {
+  margin: 12px 0 34px;
+  color: var(--muted);
+  font: 700 14px/1.4 Arial, sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.mw-page-container, .mw-page-container-inner, #bodyContent, #mw-content-text, .mw-parser-output {
+  display: contents;
+}
+.mw-parser-output p {
+  max-width: 68ch;
+  margin: 0 0 1.05em;
+}
+.mw-parser-output p:first-of-type::first-letter {
+  float: left;
+  padding: .08em .12em 0 0;
+  color: var(--accent);
+  font-size: 4.8em;
+  line-height: .78;
+}
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.infobox {
+  float: right;
+  width: min(360px, 42%);
+  margin: 0 0 26px 34px;
+  border: 0;
+  border-collapse: collapse;
+  background: #fbf3e5;
+  color: var(--ink);
+  box-shadow: 0 0 0 1px rgba(66,47,25,.36), 12px 12px 0 rgba(34,89,168,.15);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.infobox th, .infobox td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(66,47,25,.16);
+  vertical-align: top;
+}
+.infobox-above {
+  background: var(--space) !important;
+  color: #f4ead5;
+  font: italic 700 23px Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+.infobox-image img {
+  display: block;
+  width: min(100%, 300px);
+  height: auto;
+  margin: 10px auto;
+  border: 8px solid #fff8ec;
+  box-shadow: 0 8px 20px rgba(0,0,0,.22);
+}
+.infobox-header, .infobox-full-data {
+  background: var(--paper-deep) !important;
+  color: var(--ink);
+  text-align: center;
+  font-weight: 700;
+}
+.infobox-label {
+  color: var(--accent);
+  font-weight: 700;
+  width: 34%;
+}
+.mw-heading h2, h2 {
+  clear: both;
+  margin: 1.6em 0 .7em;
+  padding-top: .35em;
+  border-top: 2px solid var(--rule);
+  border-bottom: 0;
+  color: #100f0d;
+  font-size: 34px;
+  font-style: italic;
+}
+.mw-heading h3, h3 {
+  margin: 1.2em 0 .5em;
+  color: var(--accent);
+  font-size: 23px;
+}
+figure { margin: 1em 0 1.3em; }
+figcaption { color: var(--muted); font-size: .88em; }
+table.wikitable {
+  max-width: 100%;
+  background: #fff8ec;
+  border-collapse: collapse;
+}
+table.wikitable th, table.wikitable td {
+  border: 1px solid rgba(66,47,25,.26);
+  padding: 6px 8px;
+}
+@media (max-width: 820px) {
+  body { font-size: 17px; }
+  .lp-insert { width: 100%; margin: 0; padding: 22px; }
+  .infobox { float: none; width: 100%; margin: 0 0 24px; }
+}
+
+
+/* Mobile and tablet LP insert layout */
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+.track-listing,
+.mw-parser-output table {
+  max-width: 100%;
+}
+.track-listing {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tracklist {
+  min-width: 620px;
+}
+.infobox a,
+.mw-parser-output a {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 980px) {
+  .lp-insert {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 24px;
+    border-left: 0;
+    border-right: 0;
+  }
+  .lp-title {
+    font-size: clamp(36px, 12vw, 68px);
+  }
+  .lp-subtitle {
+    margin-bottom: 24px;
+  }
+  .infobox {
+    float: none;
+    clear: both;
+    width: min(100%, 420px);
+    margin: 0 auto 26px;
+  }
+  .mw-parser-output p {
+    max-width: none;
+  }
+}
+@media (max-width: 560px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .lp-insert {
+    padding: 18px 16px 24px;
+    box-shadow: none;
+  }
+  .lp-kicker,
+  .lp-subtitle {
+    font-size: 11px;
+    letter-spacing: .1em;
+  }
+  .lp-title {
+    font-size: clamp(34px, 14vw, 54px);
+    line-height: .98;
+  }
+  .mw-parser-output p:first-of-type::first-letter {
+    float: none;
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+  .infobox {
+    font-size: 13px;
+    box-shadow: 0 0 0 1px rgba(66,47,25,.26);
+  }
+  .infobox th,
+  .infobox td {
+    padding: 7px 8px;
+  }
+  .mw-heading h2,
+  h2 {
+    font-size: 26px;
+  }
+  .mw-heading h3,
+  h3 {
+    font-size: 20px;
+  }
+  .track-listing {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+}
+
+</style>
+<link rel="icon" type="image/jpeg" href="/cosmos/lp-icon.jpg?v=20260605182716">
+<link rel="apple-touch-icon" href="/cosmos/lp-icon.jpg?v=20260605182716">
+</head>
+<body>
+<main class="lp-insert">
+<p class="lp-kicker">Cosmos · trilha sonora · LP</p>
+<h1 class="lp-title">The Music of Cosmos</h1>
+<p class="lp-subtitle">Encarte digital do álbum</p>
+<div id=mw-content-text class=mw-body-content><div class="mw-content-ltr mw-parser-output" lang=pt dir=ltr data-mw-parsoid-version=0.24.0.0-alpha7 data-mw-html-version=2.8.0><section data-mw-section-id=0 id=mwAQ><table class=infobox about=#mwt1><tbody><tr><th colspan=2 class=infobox-above style=background-color:gainsboro><span><i>Music of Cosmos</i></span><tr><td colspan=2 class=infobox-image><img src="/cosmos/lp-icon.jpg" alt="Capa do LP The Music of Cosmos" loading="eager" width="300" height="300"><tr><th colspan=2 class=infobox-header style=background-color:gainsboro><a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Banda_sonora title="Banda sonora">Trilha sonora</a><span typeof=mw:Entity> </span>de Vários<tr><th scope=row class=infobox-label>Lançamento<td class=infobox-data>1981<tr class=hlist><th scope=row class=infobox-label>Formato(s)<td class=infobox-data>LP / Cassette / CD<tr class=hlist><th scope=row class=infobox-label><a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Gravadora title=Gravadora>Gravadora(s)</a><td class=infobox-data><a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/RCA_Records title="RCA Records">RCA Records</a></table>
+<p id=mwAw><b id=mwBA>Music of Cosmos</b> é a <a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Trilha_sonora title="Trilha sonora" class=mw-redirect id=mwBQ>trilha sonora</a> lançada em <a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/1981 title=1981 id=mwBg>1981</a>, então no formato de <a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Long_play title="Long play" class=mw-redirect id=mwBw>long play</a>, publicada pela <a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/RCA_Records title="RCA Records" id=mwCA>RCA Records</a> pouco tempo depois da exibição da série <a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Cosmos title=Cosmos id=mwCQ>Cosmos</a>. A trilha é composta por canções populares e eruditas, incluindo o tema "<i id=mwCg>Heaven and Hell, part 1</i>", composto pelo músico grego <a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis id=mwCw>Vangelis</a>. Em 2004 a gravadora relançou o disco em <a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Compact_disc title="Compact disc" id=mwDA>compact disc</a>. Já em 2002, por sua vez, uma edição especial foi lançada, num disco duplo.</p>
+</section><section data-mw-section-id=1 id=mwDg aria-labelledby=Versões><div class="mw-heading mw-heading2"><h2 id=Versões><span id=Vers.C3.B5es typeof=mw:FallbackId></span>Versões</h2></div>
+<section data-mw-section-id=2 id=mwDw aria-labelledby=LP_&amp;_Cassette><div class="mw-heading mw-heading3"><h3 id=LP_&amp;_Cassette><span id=LP_.26_Cassette typeof=mw:FallbackId></span>LP &amp; Cassette</h3></div>
+<ul id=mwEA><li id=mwEQ>1981 RCA Records, Catalog No. ABL 1-4003</ul>
+<div class=track-listing style=padding:4px about=#mwt4 id=mwEw><table class=tracklist><tbody><tr><th class="tlheader mbox-text" colspan=3 scope=col style=text-align:left;background-color:var(--background-color-base,#fff);color:var(--color-base,black)>The Music of Cosmos<td class=mbox-empty-cell><tr><th class=tracklist-number-header scope=col><abbr title=Número>N.º</abbr><th scope=col style=width:100%;text-align:left>Título<th class=tracklist-length-header scope=col>Duração<td class=mbox-empty-cell><tr><th id=faixa1 scope=row>1.<td>"Heaven And Hell Part 1" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa2 scope=row>2.<td>"Symphony No.11" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Dmitri_Shostakovich title="Dmitri Shostakovich" class=mw-redirect>Dmitri Shostakovich</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa3 scope=row>3.<td>"Alpha" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa4 scope=row>4.<td>"Depicting The Cranes In Their Nest" (<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/Gor%C5%8D_Yamaguchi?action=edit&amp;redlink=1" title="Gorō Yamaguchi (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["Gorō Yamaguchi"]}}'>G. Yamaguchi</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa5 scope=row>5.<td>"Canon A 3 On A Ground In D" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Johann_Pachelbel title="Johann Pachelbel">Johann Pachelbel</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa6 scope=row>6.<td>"<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/As_Quatro_Esta%C3%A7%C3%B5es title="As Quatro Estações">As Quatro Estações</a>" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Antonio_Vivaldi title="Antonio Vivaldi">Antonio Vivaldi</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa7 scope=row>7.<td>"The Sea Named "Solaris"" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Tomita title=Tomita class=mw-redirect>Tomita</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa8 scope=row>8.<td>"Partita No.3" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Johann_Sebastian_Bach title="Johann Sebastian Bach">Johann Sebastian Bach</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa9 scope=row>9.<td>"Sinfonia Nº.19" (<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/Alan_Hovhaness?action=edit&amp;redlink=1" title="Alan Hovhaness (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["Alan Hovhaness"]}}'>Alan Hovhaness</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa10 scope=row>10.<td>"Legacy" (Synergy)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa11 scope=row>11.<td>"Russian Easter Festival" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Nikolai_Rimsky-Korsakov title="Nikolai Rimsky-Korsakov">Nikolai Rimsky-Korsakov</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa12 scope=row>12.<td>"Inside The Heart Of The Universe" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Toru_Takemitsu title="Toru Takemitsu" class=mw-redirect>Toru Takemitsu</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa13 scope=row>13.<td>"Fly Night Bird" (<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/Roy_Buchanon?action=edit&amp;redlink=1" title="Roy Buchanon (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["Roy Buchanon"]}}'>Roy Buchanon</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa14 scope=row>14.<td>"Beaubourg Part II" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa15 scope=row>15.<td>"<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Sagra%C3%A7%C3%A3o_da_Primavera title="Sagração da Primavera" class=mw-redirect>Sagração da Primavera</a>" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Igor_Stravinsky title="Igor Stravinsky" class=mw-redirect>Igor Stravinsky</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa16 scope=row>16.<td>"Entends Tu Les Chiens Aboyer?" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa17 scope=row>17.<td>"Bulgarian Sheperdess Song" (<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/L._Kanevski?action=edit&amp;redlink=1" title="L. Kanevski (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["L. Kanevski"]}}'>L. Kanevski</a> / <a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/S._Zakmanov?action=edit&amp;redlink=1" title="S. Zakmanov (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["S. Zakmanov"]}}'>S. Zakmanov</a> / <a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/V._Balkanska?action=edit&amp;redlink=1" title="V. Balkanska (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["V. Balkanska"]}}'>V. Balkanska</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa18 scope=row>18.<td>"Heaven And Hell (Reprise)" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-total-length><th colspan=2 scope=row><span>Duração total:</span><td>????</table></div>
+
+<div class=mw-references-wrap typeof=mw:Extension/references about=#mwt6 id=mwFg data-mw='{"name":"references","attrs":{}}'><ol class="mw-references references" id=mwFw></ol></div>
+</section><section data-mw-section-id=3 id=mwGA aria-labelledby=Singles><div class="mw-heading mw-heading3"><h3 id=Singles>Singles</h3></div>
+<ul id=mwGQ><li id=mwGg>1981 Heaven and Hell / Alpha RCA 71 UK</li>
+<li id=mwGw>1981 Heaven and Hell / Alpha BBC 1</li>
+<li id=mwHA>1981 Theme from the TV-series COSMOS / Alpha PB 5356 Holland</li>
+<li id=mwHQ>1981 Titelmelodie aus de TV-serie "Unser Kosmos" / Alpha PB 5356 West-Germany</ul>
+</section><section data-mw-section-id=4 id=mwHg aria-labelledby=CDs><div class="mw-heading mw-heading3"><h3 id=CDs>CDs</h3></div>
+<ul id=mwHw><li id=mwIA>1994 RCA 07863 54003-2 USA</li>
+<li id=mwIQ>2000 Collectables COL-CD-6293 USA</li>
+<li id=mwIg>2002 BMG Special Products MOC 1100 USA (two-disc Collector's Edition)</ul>
+<section data-mw-section-id=5 id=mwIw aria-labelledby=Edição_Especial><div class="mw-heading mw-heading4"><h4 id=Edição_Especial><span id=Edi.C3.A7.C3.A3o_Especial typeof=mw:FallbackId></span>Edição Especial</h4></div>
+<div class=track-listing style=padding:4px about=#mwt7 id=mwJQ><table class=tracklist><tbody><tr><th class="tlheader mbox-text" colspan=3 scope=col style=text-align:left;background-color:var(--background-color-base,#fff);color:var(--color-base,black)>Disco 1<td class=mbox-empty-cell><tr><th class=tracklist-number-header scope=col><abbr title=Número>N.º</abbr><th scope=col style=width:100%;text-align:left>Título<th class=tracklist-length-header scope=col>Duração<td class=mbox-empty-cell><tr><th id=faixa1 scope=row>1.<td>"Heaven And Hell Part 1" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa2 scope=row>2.<td>"<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/O_Ano_de_1905?action=edit&amp;redlink=1" title="O Ano de 1905 (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["O Ano de 1905"]}}'>O Ano de 1905</a> (Sinfonia nº 11)" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Dmitri_Shostakovich title="Dmitri Shostakovich" class=mw-redirect>Dmitri Shostakovich</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa3 scope=row>3.<td>"Alpha" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa4 scope=row>4.<td>"Depicting The Cranes In Their Nest" (<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/Gor%C5%8D_Yamaguchi?action=edit&amp;redlink=1" title="Gorō Yamaguchi (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["Gorō Yamaguchi"]}}'>G. Yamaguchi</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa5 scope=row>5.<td>"Clarinet Concerto A major" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart title="Wolfgang Amadeus Mozart">Wolfgang Amadeus Mozart</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa6 scope=row>6.<td>"Canon A 3 On A Ground In D" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Johann_Pachelbel title="Johann Pachelbel">Johann Pachelbel</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa7 scope=row>7.<td>"Metamorphosis" (Jeffrey Boydstun)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa8 scope=row>8.<td>"The Sea Named "Solaris"" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Tomita title=Tomita class=mw-redirect>Tomita</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa9 scope=row>9.<td>"Partita No.3" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Johann_Sebastian_Bach title="Johann Sebastian Bach">Johann Sebastian Bach</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa10 scope=row>10.<td>"<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/As_Quatro_Esta%C3%A7%C3%B5es title="As Quatro Estações">As Quatro Estações</a>" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Antonio_Vivaldi title="Antonio Vivaldi">Antonio Vivaldi</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa11 scope=row>11.<td>"Sonata D-Dur für Trompete, Oboe unda Basso Continuo" (<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/Gottfried_Finger?action=edit&amp;redlink=1" title="Gottfried Finger (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["Gottfried Finger"]}}'>Gottfried Finger</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa12 scope=row>12.<td>"Concerto for Mandolin in C major" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Antonio_Vivaldi title="Antonio Vivaldi">Antonio Vivaldi</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa13 scope=row>13.<td>"The Tale of Tsar Saltan" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Nikolai_Rimsky-Korsakov title="Nikolai Rimsky-Korsakov">Nikolai Rimsky-Korsakov</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa14 scope=row>14.<td>"Legacy" (Synergy)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa15 scope=row>15.<td>"Russian Easter Festival" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Nikolai_Rimsky-Korsakov title="Nikolai Rimsky-Korsakov">Nikolai Rimsky-Korsakov</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-total-length><th colspan=2 scope=row><span>Duração total:</span><td>????</table></div>
+<div class=track-listing style=padding:4px about=#mwt9 id=mwJw><table class=tracklist><tbody><tr><th class="tlheader mbox-text" colspan=3 scope=col style=text-align:left;background-color:var(--background-color-base,#fff);color:var(--color-base,black)>Disco 2<td class=mbox-empty-cell><tr><th class=tracklist-number-header scope=col><abbr title=Número>N.º</abbr><th scope=col style=width:100%;text-align:left>Título<th class=tracklist-length-header scope=col>Duração<td class=mbox-empty-cell><tr><th id=faixa1 scope=row>1.<td>"Pulstar" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa2 scope=row>2.<td>"Sinfonia Nº.19" (<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/Alan_Hovhaness?action=edit&amp;redlink=1" title="Alan Hovhaness (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["Alan Hovhaness"]}}'>Alan Hovhaness</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa3 scope=row>3.<td>"Melancholy Blues" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Louis_Armstrong title="Louis Armstrong">Louis Armstrong</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa4 scope=row>4.<td>"Aquarius" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Galt_MacDermot title="Galt MacDermot">Galt MacDermot</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa5 scope=row>5.<td>"Beaubourg Part II" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa6 scope=row>6.<td>"<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Os_Planetas title="Os Planetas" class=mw-redirect>Os Planetas</a>" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Gustav_Holst title="Gustav Holst">Gustav Holst</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa7 scope=row>7.<td>"Alien Images 1" (Jeff Boydstun)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa8 scope=row>8.<td>"Fly Night Bird" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Roy_Buchanan title="Roy Buchanan">Roy Buchanan</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa9 scope=row>9.<td>"Entends Tu Les Chiens Aboyer?" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa10 scope=row>10.<td>"<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Sagra%C3%A7%C3%A3o_da_Primavera title="Sagração da Primavera" class=mw-redirect>Sagração da Primavera</a>" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Igor_Stravinsky title="Igor Stravinsky" class=mw-redirect>Igor Stravinsky</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa11 scope=row>11.<td>"Prayer of St. Gregory" (<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/Alan_Hovhaness?action=edit&amp;redlink=1" title="Alan Hovhaness (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["Alan Hovhaness"]}}'>Alan Hovhaness</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-even><th id=faixa12 scope=row>12.<td>"Bulgarian Sheperdess Song" (<a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/L._Kanevski?action=edit&amp;redlink=1" title="L. Kanevski (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["L. Kanevski"]}}'>L. Kanevski</a> / <a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/S._Zakmanov?action=edit&amp;redlink=1" title="S. Zakmanov (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["S. Zakmanov"]}}'>S. Zakmanov</a> / <a rel=mw:WikiLink href="https://pt.wikipedia.org/wiki/V._Balkanska?action=edit&amp;redlink=1" title="V. Balkanska (página não existe)" class=new typeof=mw:LocalizedAttrs data-mw-i18n='{"title":{"lang":"x-page","key":"red-link-title","params":["V. Balkanska"]}}'>V. Balkanska</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr><th id=faixa18 scope=row>18.<td>"Comet 16" (<a rel=mw:WikiLink href=https://pt.wikipedia.org/wiki/Vangelis title=Vangelis>Vangelis</a>)<td class=tracklist-length><span typeof=mw:Entity>&nbsp;</span><tr class=tracklist-total-length><th colspan=2 scope=row><span>Duração total:</span><td>????</table></div>
+</section></section></section>
+</div>
+</div>
+ 
+ </div>
+ </main>
+ 
+ </div>
+ <div class=mw-footer-container>
+ 
+<footer id=footer class=mw-footer>
+ <ul id=footer-info>
+ <li id=footer-info-lastmod> Esta página foi editada pela última vez em 5 de agosto de 2016, às 19h41min.</li>
+ <li id=footer-info-renderedwith>A página foi renderizada com <a href=https://www.mediawiki.org/wiki/Special:MyLanguage/Parsoid class=extiw title=mw:Special:MyLanguage/Parsoid>Parsoid</a>.</li>
+ <li id=footer-info-copyright>Este texto é disponibilizado nos termos da licença <a rel=nofollow class="external text" href=https://creativecommons.org/licenses/by-sa/4.0/deed.pt>Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0) da Creative Commons</a>;
+pode estar sujeito a condições adicionais.
+Para mais detalhes, consulte as <a class="external text" href=https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Terms_of_Use>condições de utilização</a>.</li>
+</ul>
+ <ul id=footer-places>
+ <li id=footer-places-privacy><a href=https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy/pt-br>Política de privacidade</a></li>
+ <li id=footer-places-about><a href=https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:Sobre_a_Wikip%C3%A9dia>Sobre a Wikipédia</a></li>
+ <li id=footer-places-disclaimers><a href=https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:Isen%C3%A7%C3%A3o_de_responsabilidade_geral>Avisos gerais</a></li>
+ <li id=footer-places-legal-safety-contacts><a href=https://foundation.wikimedia.org/wiki/Special:MyLanguage/Legal:Wikimedia_Foundation_Legal_and_Safety_Contact_Information>Contactos Legais e Segurança</a></li>
+ <li id=footer-places-wm-codeofconduct><a href=https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct>Código de Conduta</a></li>
+ <li id=footer-places-developers><a href=https://developer.wikimedia.org/>Desenvolvedores</a></li>
+ <li id=footer-places-statslink><a href=https://stats.wikimedia.org/#/pt.wikipedia.org>Estatísticas</a></li>
+ <li id=footer-places-cookiestatement><a href=https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement>Declaração sobre cookies</a></li>
+ <li id=footer-places-mobileview><a href="https://pt.wikipedia.org/w/index.php?title=The_Music_of_Cosmos&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Versão móvel</a></li>
+<li style=display:none></ul>
+ <ul id=footer-icons class=noprint>
+ <li id=footer-copyrightico><a href=https://www.wikimedia.org/ class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><picture><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA4OSAyOCI+Cgk8bWFzayBpZD0iYSIgd2lkdGg9IjI3IiBoZWlnaHQ9IjI4IiB4PSIwIiB5PSIwIiBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBzdHlsZT0ibWFzay10eXBlOmx1bWluYW5jZSI+CgkJPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE0LjI2IDEyLjN2OS4xNkgxMi4yVjEyLjNMLjMxLjR2MjYuOTVoMjUuODVWLjR6Ii8+Cgk8L21hc2s+Cgk8ZyBtYXNrPSJ1cmwoI2EpIj4KCQk8cGF0aCBmaWxsPSIjMzk2IiBkPSJNMTMuMjMgMjEuNDRhNy4yNSA3LjI1IDAgMSAwIDAtMTQuNSA3LjI1IDcuMjUgMCAwIDAgMCAxNC41Ii8+CgkJPHBhdGggc3Ryb2tlPSIjMDY5IiBzdHJva2Utd2lkdGg9IjIuNiIgZD0iTTEzLjIzIDI0LjU0YzUuNzIgMCAxMC40LTQuNjQgMTAuMzYtMTAuMzUgMC01LjcyLTQuNjQtMTAuNC0xMC4zNi0xMC4zNi01LjcyIDAtMTAuNCA0LjY0LTEwLjM1IDEwLjM2IDAgNS43MiA0LjY0IDEwLjQgMTAuMzYgMTAuMzV6Ii8+Cgk8L2c+Cgk8cGF0aCBmaWxsPSIjOTAwIiBkPSJNMTMuMjMgOS45OGEzLjk4IDMuOTggMCAxIDAgMC03Ljk1IDMuOTggMy45OCAwIDAgMCAwIDcuOTUiLz4KCTxwYXRoIGZpbGw9IiM2MjY5NjgiIGQ9Im0zMy43NyAxMS41LTIuMTQgNC41MWgtLjc0bC0zLjA0LTdoMS44MmwxLjYzIDMuODIgMS43OC0zLjgxaDEuMzhsMS43OCAzLjgxIDEuNjEtMy44MWgxLjgzbC0zLjAzIDdoLS43NHptOC40Ny0yLjQ4djYuOWgtMS43MnYtNi45em03LjQgMC0yLjI1IDMuMjQgMy4wNSAzLjY2SDQ4LjNsLTIuNzMtMy4yM3YzLjIzaC0xLjczdi02LjloMS43M3YzLjFsMi4xOS0zLjFoMS45Wm0zLjI2IDB2Ni45aC0xLjcydi02Ljl6bTUuMzIgMi41NiAyLjIyLTIuNTZoMS41djYuOWgtMS43MnYtNC4zbC0xLjg3IDIuMTZoLS4yNmwtMS44Ny0yLjE3djQuMzFINTQuNXYtNi45SDU2bDIuMjIgMi41NlptMTAuMzYgMy4wOHYxLjI2aC01LjF2LTYuOWg1LjAzdjEuMjZoLTMuM3YxLjQ1aDMuMTVWMTNINjUuMnYxLjY2em0xLjMtNS42NGgzLjA1cTEuNzYgMCAyLjc5Ljk2IDEuMDMuOTcgMS4wMyAyLjUgMCAxLjYxLTEuMDUgMi41My0xLjAzLjkxLTIuOTYuOTFoLTIuODV6bTEuNzMgMS4yNnY0LjM4aDEuMTJxMS4wOSAwIDEuNjctLjYuNTgtLjYuNTgtMS41OSAwLTEuMDItLjYtMS42LS41OC0uNTktMS42Ny0uNTl6bTguMi0xLjI2djYuOWgtMS43M3YtNi45aDEuNzJabTUuNjMgMCAzLjA3IDYuOWgtMS44NWwtLjU3LTEuMzZIODNsLS41MSAxLjM2aC0xLjgybDIuNzgtNi45em0uMTQgNC4zMy0xLjEtMi42OC0xLjAyIDIuNjh6Ii8+Cgk8cGF0aCBmaWxsPSIjODE4ODg4IiBkPSJNNTkuNDYgMi43NVY0LjdxMCAuMjMuMTYuMjN0LjUtLjI0di41NWEyLjcgMi43IDAgMCAxLS40OS4yNnEtLjE4LjA4LS4zOC4wOC0uNTggMC0uNjgtLjQ2LS41OC40NS0xLjIzLjQ1YTEuMDcgMS4wNyAwIDAgMS0xLjEtMS4xcTAtLjQ0LjMtLjc3LjMxLS4zNC44OC0uNTRsMS4xNS0uNHYtLjI0cTAtLjgyLS44Mi0uODItLjczIDAtMS40My43NnYtLjk4cS41Mi0uNjIgMS41LS42Mi43NCAwIDEuMTkuMzlhMS4yIDEuMiAwIDAgMSAuMjcuMzNxLjExLjE5LjE0LjQuMDQuMjEuMDQuNzlabS0uODkgMS44NFYzLjI0bC0uNi4yM3EtLjQ2LjE5LS42NS4zN2EuNjIuNjIgMCAwIDAtLjE5LjQ2cTAgLjI4LjE4LjQ2YS42NS42NSAwIDAgMCAuNDcuMThxLjQzIDAgLjgtLjM1Wk00My44MiAyNy4xMnYtNi44N2gxLjU4cTEuMjEgMCAxLjg5LjYuNjcuNi42NyAxLjY5IDAgMS4wMi0uNjQgMS42OC0uNjMuNjYtMS42MS42Ni0uNDQgMC0uOTctLjJ2Mi40NGgtLjkyWm0xLjU2LTYuMDNoLS42NHYyLjhxLjQyLjIxLjg3LjIxLjY0IDAgMS4wNC0uNDR0LjQtMS4xM3EwLS40NS0uMTktLjc5YTEuMTIgMS4xMiAwIDAgMC0uNTItLjVxLS4zMy0uMTUtLjk2LS4xNW00LjUzLS44NHYxLjA0bC4wNS0uMDhxLjY1LTEuMDUgMS4zLTEuMDUuNTEgMCAxLjA3LjUxbC0uNDguOHEtLjQ3LS40NS0uODctLjQ1LS40MyAwLS43NS40MmMtLjIyLjI4LS4zMy42My0uMzIuOTh2Mi4zOGgtLjl2LTQuNTV6bTQuOTgtLjAxcTEuMDQgMCAxLjcyLjY3LjcuNjcuNyAxLjY4YTIuMTUgMi4xNSAwIDAgMS0uNyAxLjY0cS0uNy42NS0xLjc2LjY1LTEuMDIgMC0xLjcxLS42NnQtLjY5LTEuNjVxMC0xIC43LTEuNjYuNy0uNjcgMS43NC0uNjdabS0uMDUuODFxLS42NSAwLTEuMDYuNDMtLjQyLjQyLS40MiAxLjA4IDAgLjY1LjQzIDEuMDcuNDIuNCAxLjA5LjQuNjYgMCAxLjA4LS40LjQzLS40My40My0xLjA4IDAtLjY1LS40NC0xLjA3LS40NC0uNDMtMS4xLS40M20zLjg5LTIuNzFxLjIyIDAgLjM4LjE1YS41LjUgMCAwIDEgLjE2LjM3LjUyLjUyIDAgMCAxLS4xNi4zOC41LjUgMCAwIDEtLjM3LjE2LjUzLjUzIDAgMCAxLS4zOC0uMTYuNS41IDAgMCAxIDAtLjc0LjUuNSAwIDAgMSAuMzctLjE3bS0uNDMgMS45MmguOXY1LjJxMCAxLjE4LS45IDEuNjdsLS42OC0uNjZhLjk2Ljk2IDAgMCAwIC41LS4zOCAxLjEgMS4xIDAgMCAwIC4xOC0uNjN6bTYuMSAyLjM1aC0zLjJxLjA0LjY2LjQ0IDEuMDQuNC4zOSAxLjA0LjM5YTIuNyAyLjcgMCAwIDAgMS42NS0uNTZ2Ljg4YTMgMyAwIDAgMS0uODMuNHEtLjQuMTItLjk2LjEyLS43NSAwLTEuMjEtLjMxYTIuMyAyLjMgMCAwIDEtLjc1LS44NCAyLjYgMi42IDAgMCAxLS4yOC0xLjIycTAtMS4wNC42LTEuNjkuNTgtLjY1IDEuNTItLjY1LjkgMCAxLjQ0LjYzLjU0LjY0LjU0IDEuN3YuMTFtLTMuMTgtLjU0aDIuM3EtLjA0LS41NC0uMzMtLjgzLS4yOS0uMjktLjc3LS4yOXQtLjguM3EtLjMuMjgtLjQuODJtNy41NiAxLjY3di45YTMuOCAzLjggMCAwIDEtMS4zMi4yNXEtMS4wNyAwLTEuNy0uNjQtLjY0LS42My0uNjQtMS43IDAtMS4wNi42Mi0xLjcyLjYyLS42NiAxLjYzLS42NmEyLjYgMi42IDAgMCAxIC42Mi4wN3EuMjkuMDYuNy4yNXYuOTZRNjggMjEgNjcuNDMgMjFhMS4yOSAxLjI5IDAgMCAwLTEgLjQzcS0uMzkuNDMtLjM5IDEuMDkgMCAuNy40MiAxLjEuNDMuNDIgMS4xNC40Mi41MiAwIDEuMi0uM20uMzctMi43NyAxLjctMS42NnYuOTRoMS40NHYuODFoLTEuNDR2Mi4yM3EwIC43OC42NC43OC40OSAwIDEuMDMtLjMydi44NGEyLjMgMi4zIDAgMCAxLTEuMTMuMjlxLS42MiAwLTEuMDMtLjM2YTEgMSAwIDAgMS0uMjItLjI1IDEuNCAxLjQgMCAwIDEtLjE0LS4zNXEtLjA1LS4yMi0uMDUtLjg0di0yLjAyaC0uOHYtLjEiLz4KPC9zdmc+Cg==" width=25 height=25 alt="Wikimedia Foundation" lang=en loading=lazy srcset sizes></picture></a></li>
+ <li id=footer-poweredbyico><a href=https://www.mediawiki.org/ class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><picture><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA4OSAzMSI+Cgk8cGF0aCBmaWxsPSIjMDAwIiBkPSJtNDEuOTE2IDI0LjQxLS4wMS04LjE0NmgtMS4xMjNsLTIuODY1IDUuMzk0LTIuOTE3LTUuMzk0aC0xLjEyNXY4LjE0NmgxLjN2LTUuMzNsMi40MTQgNC4zOTloLjYxMWwyLjQxNS00LjQ3LjAxIDUuMzk1aDEuMjl6bTYuOTE5LTMuMDcyYTMuNyAzLjcgMCAwIDAtLjM2My0xLjY4MkEyLjY4IDIuNjggMCAwIDAgNDYgMTguMTI0YTIuNzYgMi43NiAwIDAgMC0yLjUyNSAxLjU0MyAzLjUgMy41IDAgMCAwLS4zNzIgMS42MzRjLS4wMS41Ny4xMjMgMS4xMy4zODMgMS42NDIuMjQ1LjQ3NS42MjIuODY5IDEuMDg2IDEuMTM1YTMuNDMgMy40MyAwIDAgMCAyLjkzMi4xNTEgMi40IDIuNCAwIDAgMCAuOTU1LS43NTZsLS43MDMtLjg5NmExLjk0IDEuOTQgMCAwIDEtMS41MjQuNjc1IDEuODQgMS44NCAwIDAgMS0xLjIxMy0uNCAxLjcyIDEuNzIgMCAwIDEtLjYwNC0xLjA4OWg0LjM5N3EuMDIxLS4yOC4wMjEtLjQzem0tMi44MzYtMi4wNDlhMS40OCAxLjQ4IDAgMCAxIDEuMDcuNDE5Yy4yOTUuMjk0LjQ3Ny42OC41MTYgMS4wOTRoLTMuMTgyYy4wNDMtLjQxNy4yMzEtLjgwNi41My0xLjFBMS41IDEuNSAwIDAgMSA0NiAxOS4yODltOC4wNjEtMy41MTh2My4xODlhMi4xIDIuMSAwIDAgMC0uNzg3LS42MyAyLjQgMi40IDAgMCAwLTEuMDE4LS4yMDkgMi42OSAyLjY5IDAgMCAwLTIuNDYzIDEuNTEzIDMuOTcgMy45NyAwIDAgMCAwIDMuMzM0IDIuNjggMi42OCAwIDAgMCAyLjQ2MyAxLjUyNGMuMzY0LjAwNC43MjQtLjA3MSAxLjA1Ni0uMjIxYTIuMDYgMi4wNiAwIDAgMCAuODAzLS42NjR2LjgwM2gxLjI2di04LjYzaC0xLjMxOXptLTEuNjQ2IDcuNDc1Yy0uMy4wMDUtLjU5NS0uMDc3LS44NS0uMjM1YTEuNjUgMS42NSAwIDAgMS0uNTk5LS42ODEgMi41IDIuNSAwIDAgMSAwLTIuMDQ5Yy4xMzItLjI3OC4zNC0uNTE0LjU5OC0uNjgxYTEuNjMgMS42MyAwIDAgMSAxLjcgMGMuMjYuMTY3LjQ2Ny40MDMuNTk5LjY4MWEyLjUgMi41IDAgMCAxIDAgMi4wNDkgMS42NiAxLjY2IDAgMCAxLS41OTguNjgxIDEuNTYgMS41NiAwIDAgMS0uODUuMjM1bTQuNDcxIDEuMTYzaDEuMzF2LTYuMjE1aC0xLjMxMXptNC45NjMtNi4yODRhNC4zIDQuMyAwIDAgMC0xLjMxMy4xOTggMy4xIDMuMSAwIDAgMC0xLjA1NS41N2wuNTE1IDEuMDU1YTIuMiAyLjIgMCAwIDEgLjc3Mi0uNDU0Yy4yOTctLjEwOC42MTEtLjE2My45MjgtLjE2M2ExLjQyIDEuNDIgMCAwIDEgMS4wNDUuMzUyIDEuMzUgMS4zNSAwIDAgMSAuMzUyIDEuMDAxdi4wOTNoLTEuNDU0YTIuNiAyLjYgMCAwIDAtMS43NjkuNTA3IDEuNzIgMS43MiAwIDAgMC0uNTYxIDEuMzQ0IDEuNzYgMS43NiAwIDAgMCAuOTg2IDEuNjI0Yy4zNDQuMTY0LjcyMi4yNDQgMS4xMDIuMjM0LjM3LjAxLjczOC0uMDY0IDEuMDc1LS4yMTZhMS41NyAxLjU3IDAgMCAwIC42ODgtLjYyMnYuNzYyaDEuMjR2LTMuNjQ0YTIuNyAyLjcgMCAwIDAtLjY1Ni0xLjk4NCAyLjU1IDIuNTUgMCAwIDAtMS44OTUtLjY1OG0tLjE3OSA1LjMwN2ExLjIgMS4yIDAgMCAxLS43ODYtLjIzNC43Ny43NyAwIDAgMS0uMjg0LS42M3EwLS44MiAxLjEzNC0uODJoMS4zNTJ2LjcxNWExLjMzIDEuMzMgMCAwIDEtLjU0LjcxNiAxLjU3IDEuNTcgMCAwIDEtLjg3Ny4yNXptMTMuNzYtNy4xNy0xLjg3NiA2LjIyNy0xLjg1Ny02LjIyN2gtMS4yNjJsLTEuOSA2LjE5Mi0xLjgyNi02LjE5MmgtMS40MTdsMi40MzUgOC4xNDdoMS40NTdsMS44NDctNi4wMjkgMS44MTYgNi4wMjloMS40NWwyLjQzNS04LjE0N3ptMi4xMzEgOC4xNDdoMS4zMTJ2LTYuMjE1SDc3LjU2em03LjA1NCAwaDEuNTk1TDgzLjY0NyAyMC44bDIuMzQ2LTIuNjA3aC0xLjU3OWwtMi43MiAyLjc5NFYxNS43OGgtMS4zMXY4LjYzMWgxLjMxdi0xLjY0MmwuOTc3LTEuMDI0em0yLjE4MyAwaDEuMzEydi02LjIxNWgtMS4zMTN2Ni4yMTV6bS0yOS4yNTItNy4wMzZhLjgyLjgyIDAgMCAwIC42MDQtLjIzNS44LjggMCAwIDAgLjIzNS0uNTg2LjcuNyAwIDAgMC0uMjQyLS41NDUuODYuODYgMCAwIDAtLjU5OC0uMjE3Ljg0Ljg0IDAgMCAwLS41OTguMjI3Ljc4Ljc4IDAgMCAwLS4xNzguODc0LjguOCAwIDAgMCAuMTc4LjI1OC44NC44NCAwIDAgMCAuNTk4LjIyN3ptMjAuNjc2IDBhLjgyLjgyIDAgMCAwIC42MDQtLjIzNS44LjggMCAwIDAgLjIzNS0uNTg2LjcuNyAwIDAgMC0uMjQyLS41NDUuODYuODYgMCAwIDAtLjU5OC0uMjE3Ljg0Ljg0IDAgMCAwLS41OTguMjI3Ljc4Ljc4IDAgMCAwIDAgMS4xMzIuODQuODQgMCAwIDAgLjU5OC4yMjd6bTkuMjM2IDBhLjgyLjgyIDAgMCAwIC42MDQtLjIzNS44LjggMCAwIDAgLjIzNC0uNTg2LjcuNyAwIDAgMC0uMjQxLS41NDUuODYuODYgMCAwIDAtLjU5OC0uMjE3Ljg0Ljg0IDAgMCAwLS41OTguMjI3Ljc4Ljc4IDAgMCAwIDAgMS4xMzIuODQuODQgMCAwIDAgLjU5OC4yMjd6TTM2LjEzNiA5LjkxNmMuNDE2LjAwNy44My0uMDUzIDEuMjI3LS4xNzdhMi41IDIuNSAwIDAgMCAuODg5LS40OTggMi4xNCAyLjE0IDAgMCAwIC41NDQtLjc2MiAyLjUgMi41IDAgMCAwIC4xODQtLjk3NCAyLjYgMi42IDAgMCAwLS4xNy0uOTY4IDEuOSAxLjkgMCAwIDAtLjUyNS0uNzQ1IDIuNCAyLjQgMCAwIDAtLjg4Ni0uNDc3IDQuMiA0LjIgMCAwIDAtMS4yNTgtLjE3aC0yLjI3OXY3LjU3NGgxLjA4N1Y5LjkxNnptLTEuMTg3LTMuOTE0aDEuMTg4Yy4yNjEtLjAwNS41MjIuMDMuNzczLjEwMy4yMDIuMDU5LjM4OS4xNi41NDkuMjk4LjE0NS4xMjguMjU3LjI4OS4zMjcuNDY5LjA3NS4yMDIuMTEyLjQxNi4xMDguNjMuMDAxLjIxNi0uMDM5LjQyOS0uMTE3LjYzYTEuMyAxLjMgMCAwIDEtLjMzNi40ODdjLS4xNi4xNDItLjM0OC4yNS0uNTUxLjMxNy0uMjQ0LjA4LS41LjEyLS43NTcuMTE3aC0xLjE4NHptNS45OTMgMS40N2MtLjMwOC4xMi0uNTg2LjMxLS44MTMuNTUtLjIzLjI1LS40MDYuNTQ2LS41MTUuODY4YTMuNzQgMy43NCAwIDAgMCAwIDIuMjg4Yy4xMS4zMjMuMjg0LjYxOS41MTUuODcuMjI3LjI0Mi41MDQuNDMuODEzLjU1MWEzLjA1IDMuMDUgMCAwIDAgMi4xMzQgMGMuMzA2LS4xMjIuNTgyLS4zMS44MDctLjU1YTIuNSAyLjUgMCAwIDAgLjUxMi0uODcxIDMuNzQgMy43NCAwIDAgMCAwLTIuMjg4IDIuNSAyLjUgMCAwIDAtLjUxMi0uODY4IDIuMiAyLjIgMCAwIDAtLjgwNy0uNTUgMy4wNSAzLjA1IDAgMCAwLTIuMTM0IDBtLS4wOTUgNC4wMjNhMi40IDIuNCAwIDAgMS0uMzgzLTEuNDU3IDIuNDMgMi40MyAwIDAgMSAuMzgzLTEuNDU2IDEuMzUgMS4zNSAwIDAgMSAxLjE2My0uNTIyIDEuMzMgMS4zMyAwIDAgMSAxLjE1LjUyMmMuMjc3LjQzMy40MS45NDMuMzggMS40NTZhMi40MyAyLjQzIDAgMCAxLS4zOCAxLjQ1NyAxLjM0IDEuMzQgMCAwIDEtMS4xNS41MTcgMS4zNSAxLjM1IDAgMCAxLTEuMTYzLS41MTdtNS45NjUgMS4yMjRoLjc1NWEuMjM1LjIzNSAwIDAgMCAuMjI4LS4xOWwxLjE2NS0zLjUzMXEuMDQxLS4xMjUuMDY4LS4yNTRsLjA1My0uMjU2cS4wMjcuMTI3LjA1OS4yNTNjLjAzMi4xMjYuMDQ1LjE2OC4wNzIuMjUybDEuMTQ2IDMuNTM2YS4yMS4yMSAwIDAgMCAuMi4xOWguNzkybDEuNzMxLTUuMzU2aC0uNzU1YS4zLjMgMCAwIDAtLjI5LjJsLTEuMDAzIDMuMzRhOSA5IDAgMCAwLS4xNjQuNzU2IDEzIDEzIDAgMCAwLS4xOTYtLjc1NEw0OS42IDcuNTQzYS4yNy4yNyAwIDAgMC0uMS0uMTQuMy4zIDAgMCAwLS4xODMtLjA1NWgtLjQzYS4yNzUuMjc1IDAgMCAwLS4yNzUuMTk1bC0xLjA4NyAzLjM2LS4xMTIuMzg2cS0uMDUyLjE4NS0uMS4zN2ExMyAxMyAwIDAgMC0uMTUzLS43NTRsLS45ODYtMy4zNDFhLjMuMyAwIDAgMC0uMTAzLS4xNDIuMzIuMzIgMCAwIDAtLjE5OS0uMDU5aC0uNzl6bTguMjQtNS4yMzVjLS4zLjEzLS41Ny4zMjEtLjc5MS41NjJhMi41IDIuNSAwIDAgMC0uNDk5Ljg0IDMgMyAwIDAgMC0uMTc0IDEuMDQyYy0uMDA4LjQxOS4wNTcuODM2LjE5MiAxLjIzMi4xMTQuMzMzLjI5Ny42NC41MzYuODk4LjIzLjI0LjUxLjQyOS44Mi41NDhhMi44IDIuOCAwIDAgMCAxLjAyNy4xODhxLjI5NCAwIC41ODYtLjA0Ny4yOTctLjA0Ni41NzgtLjE1YTIuNyAyLjcgMCAwIDAgLjUyMy0uMjU4cS4yNDMtLjE1NS40MjctLjM3OGwtLjI4NS0uMzYzYS4yLjIgMCAwIDAtLjE4NC0uMDk1LjQ0LjQ0IDAgMCAwLS4yMjIuMDggNSA1IDAgMCAxLS4zMDguMTc0cS0uMjEuMTA2LS40MzMuMTc1YTIgMiAwIDAgMS0uNTk5LjA3OSAxLjggMS44IDAgMCAxLS42Ny0uMTE4IDEuMyAxLjMgMCAwIDEtLjUxNi0uMzU4IDEuNyAxLjcgMCAwIDEtLjMzNy0uNjA0IDMgMyAwIDAgMS0uMTQtLjg1NWgzLjUzNmEuMi4yIDAgMCAwIC4xODctLjA3OS42NS42NSAwIDAgMCAuMDUtLjMxMiAyLjkgMi45IDAgMCAwLS4xNjgtMS4wMjEgMi4wNCAyLjA0IDAgMCAwLTEuMTgyLTEuMjIgMi41IDIuNSAwIDAgMC0uODk3LS4xNjIgMi42IDIuNiAwIDAgMC0xLjA1Ny4yMDJtMS42MzQuNjM2YTEuMjEgMS4yMSAwIDAgMSAuNjgxLjc1MXEuMDk0LjI4Ni4wOS41ODdoLTIuODQ2YTEuODIgMS44MiAwIDAgMSAuNDctMS4wNTYgMS41OCAxLjU4IDAgMCAxIDEuNjA1LS4yODJtMy43OTQgNC41OTlWOS4zNThxLjA5MS0uMjQzLjIyLS40Ny4xMS0uMTk1LjI3NC0uMzQ5LjE1Mi0uMTQxLjM0Ni0uMjE1Yy4xNDEtLjA1Mi4yOTEtLjA3Ny40NDEtLjA3NHEuMTYxLS4wMDEuMzE5LjAzMS4xMDguMDI3LjIyLjAzMmEuMTYuMTYgMCAwIDAgLjE2OC0uMTQybC4wNy0uNzVhLjguOCAwIDAgMC0uMjczLS4xMTYgMS40IDEuNCAwIDAgMC0uMzMtLjAzOCAxLjM1IDEuMzUgMCAwIDAtLjg4Ni4zMDYgMi40IDIuNCAwIDAgMC0uNjIyLjgzOWwtLjA2NC0uNzgxYS4zNi4zNiAwIDAgMC0uMDgyLS4yMTEuMzMuMzMgMCAwIDAtLjIyNC0uMDZoLS41NzR2NS4zNTloMS4wMDJ6bTMuNzk4LTUuMjM1Yy0uMy4xMy0uNTcuMzIxLS43OTIuNTYyYTIuNSAyLjUgMCAwIDAtLjQ5OC44NCAzIDMgMCAwIDAtLjE3NSAxLjA0MiAzLjYgMy42IDAgMCAwIC4xOTIgMS4yMzJjLjExNC4zMzMuMjk3LjY0LjUzNi44OTguMjMuMjQuNTEuNDI5LjgyMS41NDhhMi44IDIuOCAwIDAgMCAxLjAyNi4xODhxLjI5NCAwIC41ODYtLjA0Ny4yOTYtLjA0Ni41NzgtLjE1YTIuNyAyLjcgMCAwIDAgLjUyMy0uMjU4IDEuOSAxLjkgMCAwIDAgLjQyNy0uMzc4bC0uMjg1LS4zNjNhLjIuMiAwIDAgMC0uMTg0LS4wOTUuNDQuNDQgMCAwIDAtLjIyMS4wOCA1IDUgMCAwIDEtLjMwOS4xNzRxLS4yMS4xMDYtLjQzMi4xNzVhMiAyIDAgMCAxLS42LjA3OSAxLjggMS44IDAgMCAxLS42Ny0uMTE4IDEuMyAxLjMgMCAwIDEtLjUxNS0uMzU4IDEuNyAxLjcgMCAwIDEtLjMzOC0uNjA0IDMgMyAwIDAgMS0uMTQtLjg1NWgzLjUzNmEuMi4yIDAgMCAwIC4xODgtLjA3OWMuMDQtLjEuMDU2LS4yMDguMDQ0LS4zMTVhMi45IDIuOSAwIDAgMC0uMTY5LTEuMDIyIDIuMSAyLjEgMCAwIDAtLjQ2OS0uNzUxIDIgMiAwIDAgMC0uNzEzLS40NyAyLjUgMi41IDAgMCAwLS44OTctLjE2IDIuNiAyLjYgMCAwIDAtMS4wNTMuMjA1em0xLjYzMy42MzZhMS4yIDEuMiAwIDAgMSAuNjgxLjc1MXEuMDk0LjI4Ni4wOS41ODdoLTIuODQ3YTEuODIgMS44MiAwIDAgMSAuNDctMS4wNTYgMS41OCAxLjU4IDAgMCAxIDEuNjA0LS4yODJ6bTcuMjU5IDQuNTk5VjQuOTM2aC0xLjAwM1Y3Ljg4YTEuODMgMS44MyAwIDAgMC0xLjQ0Ni0uNjEyIDIuMSAyLjEgMCAwIDAtLjk2NS4yMTRjLS4yODIuMTQtLjUzLjM0LS43MjguNTg2YTIuNyAyLjcgMCAwIDAtLjQ1OS44ODQgMy43IDMuNyAwIDAgMC0uMTU4IDEuMTA2Yy0uMDA2LjM5Ni4wNDIuNzkuMTQyIDEuMTczLjA4LjMwOS4yMi42LjQxLjg1Ny4xNjYuMjI0LjM4NS40MDQuNjM3LjUyNS4yNi4xMjEuNTQ0LjE4MS44MzIuMTc3cS4yNy4wMDUuNTMyLS4wNi4yNDUtLjA2LjQ3LS4xODEuMjIyLS4xMi40MTUtLjI4NS4xOTgtLjE3LjM2NS0uMzcybC4wOS42MjlhLjI0Ni4yNDYgMCAwIDAgLjI2My4yaC42MDN6bS0yLjk2Ni0uODQyYTEgMSAwIDAgMS0uNDExLS4zNDQgMS43IDEuNyAwIDAgMS0uMjYtLjU5OSAzLjcgMy43IDAgMCAxLS4wODktLjg3NiAyLjQ2IDIuNDYgMCAwIDEgLjM5LTEuNDk5IDEuMyAxLjMgMCAwIDEgMS4xMTUtLjUyIDEuNiAxLjYgMCAwIDEgLjY2NS4xMzZjLjIyMi4xMDcuNDEzLjI2OC41NTQuNDY5djIuNTYyYTIuMiAyLjIgMCAwIDEtLjYyMi41NzggMS41IDEuNSAwIDAgMS0uNzg3LjIwMyAxLjM1IDEuMzUgMCAwIDEtLjU1NS0uMTFtNy43NDcuODQyYS4yMzQuMjM0IDAgMCAwIC4yNTMtLjIxMWwuMDQ4LS40NmMuMTcuMjIzLjM4MS40MS42MjUuNTQ3LjI3My4xNC41NzcuMjA5Ljg4NC4xOThhMi4wNiAyLjA2IDAgMCAwIDEuNjgyLS43OTVjLjIwOS0uMjczLjM2NS0uNTgyLjQ2LS45MTMuMTEtLjM4NC4xNjUtLjc4Mi4xNi0xLjE4MmE0IDQgMCAwIDAtLjE0LTEuMDk1IDIuNCAyLjQgMCAwIDAtLjQwMy0uODIgMS44IDEuOCAwIDAgMC0uNjQxLS41MiAxLjkgMS45IDAgMCAwLS44NDctLjE4MiAyIDIgMCAwIDAtLjk2OC4yMjcgMi43IDIuNyAwIDAgMC0uNzU4LjYxMnYtMy4xOWgtMS4wMDR2Ny43ODR6bTIuNzMtNC4xOTJjLjI2My40Mi4zODUuOTEzLjM0NyAxLjQwNy4wNC41NDktLjA5NyAxLjEtLjM5IDEuNTYyYTEuMzMgMS4zMyAwIDAgMS0xLjEyNS41MTcgMS42IDEuNiAwIDAgMS0uNjU1LS4xMzUgMS40NiAxLjQ2IDAgMCAxLS41NTQtLjQ2OVY4Ljg2MWEyLjMgMi4zIDAgMCAxIC42MTItLjU4N2MuMjM1LS4xMzkuNTA1LS4yMS43NzktLjIwMmExLjE3IDEuMTcgMCAwIDEgLjk4Ny40NTVtNy4wNzQtMS4xNjRoLS43OTZhLjMuMyAwIDAgMC0uMjkuMmwtMS4zNCAzLjI2MnEtLjA0OC4xMTctLjA5LjI0NWwtLjA3OS4yNDVhNCA0IDAgMCAwLS4xNDItLjQ4bC0xLjM4Ny0zLjI3MmEuMy4zIDAgMCAwLS4zMDEtLjJoLS44NzNsMi4yMDUgNS4wMjktLjk4MiAyLjEyNmguNzQ3YS4zNS4zNSAwIDAgMCAuMjI4LS4wNjEuNDQuNDQgMCAwIDAgLjExNy0uMTc3eiIvPgoJPHBhdGggZmlsbD0idXJsKCNwKSIgZD0iTTguMjg0IDYuMTE2QTQuNTUgNC41NSAwIDAgMCA5LjYxIDkuMjRhMy41IDMuNSAwIDAgMCAyLjMxNC45MjMgMS4wNyAxLjA3IDAgMCAwIC43MzYtLjMzIDMuNTEgMy41MSAwIDAgMCAuODIxLTMuMzczYy0uNjIzLTIuMTYtMi4zNS0zLjM1LTQuNDU3LTQuMzg0YTkuNCA5LjQgMCAwIDAtLjc0MSA0LjAzOHoiIG9wYWNpdHk9Ii42NSIvPgoJPHBhdGggZmlsbD0idXJsKCNpKSIgZD0iTTUuMTU1IDkuMjVhNC41IDQuNSAwIDAgMCAyLjQyMiAyLjM3NGMuODA2LjI5MyAxLjY5LjI4IDIuNDg4LS4wMzcuMjU0LS4xMTcuNDUyLS4zMjcuNTU1LS41ODZhMy41MSAzLjUxIDAgMCAwLS41Mi0zLjQzYy0xLjQxLTEuNzUtMy40NS0yLjE5LTUuNzk1LTIuMzM1YTkuNCA5LjQgMCAwIDAgLjg1IDQuMDEzIiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjaCkiIGQ9Ik0zLjQ2NSAxMy4zNDVhNC40OCA0LjQ4IDAgMCAwIDMuMTQzIDEuMjYyIDMuNSAzLjUgMCAwIDAgMi4yODYtLjk5IDEuMSAxLjEgMCAwIDAgLjI4OC0uNzU2QTMuNTIgMy41MiAwIDAgMCA3LjM5IDkuODljLTEuOTYtMS4wOC00LjAyLS43MDUtNi4yNDMuMDdhOS40IDkuNCAwIDAgMCAyLjMxOCAzLjM4NCIgb3BhY2l0eT0iLjY1Ii8+Cgk8cGF0aCBmaWxsPSJ1cmwoI2cpIiBkPSJNMy40NjIgMTcuNzgxYzEuMDkuNDI5IDIuMy40MTQgMy4zODMtLjA0MWEzLjUyIDMuNTIgMCAwIDAgMS43MzQtMS43OTMgMS4xIDEuMSAwIDAgMC0uMDItLjgxIDMuNDkgMy40OSAwIDAgMC0yLjc4Ni0yLjA1NGMtMi4yMzEtLjIzNi0zLjk4MS44OTctNS43NDcgMi40NjJhOS40IDkuNCAwIDAgMCAzLjQzNiAyLjIzNiIgb3BhY2l0eT0iLjY1Ii8+Cgk8cGF0aCBmaWxsPSJ1cmwoI2YpIiBkPSJNNS4xNDggMjEuODc3YTQuNSA0LjUgMCAwIDAgMy4xMS0xLjMzOCAzLjUzIDMuNTMgMCAwIDAgLjkyLTIuMzIzIDEuMSAxLjEgMCAwIDAtLjMyOC0uNzQgMy40OCAzLjQ4IDAgMCAwLTMuMzU3LS44MjhjLTIuMTUuNjMzLTMuMzQgMi4zNi00LjM2NSA0LjQ4NGE5LjMgOS4zIDAgMCAwIDQuMDIuNzQ1IiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjZSkiIGQ9Ik04LjI2NyAyNS4wMTlhNC41IDQuNSAwIDAgMCAyLjM2NC0yLjQzOGMuMjkyLS44MS4yOC0xLjctLjAzNi0yLjVhMS4wOCAxLjA4IDAgMCAwLS41ODYtLjU1OCAzLjQ5IDMuNDkgMCAwIDAtMy40MTcuNTI2Yy0xLjc0IDEuNDEtMi4xOCAzLjQ2LTIuMzI1IDUuODIxYTkuMyA5LjMgMCAwIDAgNC0uODUxIiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjZCkiIGQ9Ik0xMi4zNDUgMjYuNzJhNC41MyA0LjUzIDAgMCAwIDEuMjU0LTMuMTU3IDMuNTMgMy41MyAwIDAgMC0uOTg3LTIuMjk2IDEuMDggMS4wOCAwIDAgMC0uNzUyLS4yOSAzLjQ5IDMuNDkgMCAwIDAtMi45NTIgMS44Yy0xLjA3IDEuOTctLjY5NyA0LjA0LjA3IDYuMjdhOS4zIDkuMyAwIDAgMCAzLjM2Ny0yLjMyNyIgb3BhY2l0eT0iLjY1Ii8+Cgk8cGF0aCBmaWxsPSJ1cmwoI2MpIiBkPSJNMTYuNzY0IDI2LjcyNGMuNDI3LTEuMS40MTItMi4zMi0uMDQxLTMuNGEzLjUyIDMuNTIgMCAwIDAtMS43ODUtMS43NDMgMS4wOCAxLjA4IDAgMCAwLS44MDYuMDJjLS41NTQuMjUtMS4wMy42MzktMS4zOTIgMS4xM3MtLjU4NCAxLjA3LS42NTQgMS42N2MtLjIzNCAyLjI0Ljg5NSA0IDIuNDU1IDUuNzY3YTkuMzUgOS4zNSAwIDAgMCAyLjIyMy0zLjQ0NCIgb3BhY2l0eT0iLjY1Ii8+Cgk8cGF0aCBmaWxsPSJ1cmwoI2IpIiBkPSJNMjAuODQgMjUuMDMxYy0uMDIyLTEuMTgtLjUtMi4zLTEuMzMyLTMuMTI1YTMuNSAzLjUgMCAwIDAtMi4zMTQtLjkyNCAxLjA3IDEuMDcgMCAwIDAtLjczNi4zMyAzLjUxIDMuNTEgMCAwIDAtLjgyMSAzLjM3MmMuNjMgMi4xNiAyLjM1IDMuMzUgNC40NjQgNC4zODRhOS40IDkuNCAwIDAgMCAuNzM5LTQuMDM3IiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjYSkiIGQ9Ik0yMy45NjYgMjEuODk3YTQuNSA0LjUgMCAwIDAtMi40MjEtMi4zNzUgMy41IDMuNSAwIDAgMC0yLjQ4OS4wMzcgMS4wOCAxLjA4IDAgMCAwLS41NTUuNTg2IDMuNTEgMy41MSAwIDAgMCAuNTI1IDMuNDMyYzEuNDEgMS43NSAzLjQ1IDIuMTkgNS43OTUgMi4zMzVhOS40IDkuNCAwIDAgMC0uODU1LTQuMDE1IiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjbykiIGQ9Ik0yNS42NTkgMTcuODAxYTQuNDggNC40OCAwIDAgMC0zLjE0Mi0xLjI2M2MtLjg1Ny4wNC0xLjY3LjM5MS0yLjI4NS45OWExLjEgMS4xIDAgMCAwLS4yODkuNzU2IDMuNTIgMy41MiAwIDAgMCAxLjc5MiAyLjk3YzEuOTYgMS4wOCA0LjAyLjcwNCA2LjI0NC0uMDdhOS40IDkuNCAwIDAgMC0yLjMyLTMuMzgzIiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjbikiIGQ9Ik0yNS42NjMgMTMuMzY1YTQuNDggNC40OCAwIDAgMC0zLjM4Ny4wNDEgMy41MiAzLjUyIDAgMCAwLTEuNzM0IDEuNzkzYy0uMDk4LjI2My0uMDkuNTUzLjAyMS44MWEzLjQ5IDMuNDkgMCAwIDAgMi43ODYgMi4wNTZjMi4yMy4yMzQgMy45OC0uOSA1Ljc0Ni0yLjQ2M2E5LjMgOS4zIDAgMCAwLTMuNDMyLTIuMjM3IiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjbSkiIGQ9Ik0yMy45NzcgOS4yNjZhNC41IDQuNSAwIDAgMC0zLjEwOSAxLjMzOCAzLjUzIDMuNTMgMCAwIDAtLjkyIDIuMzI1Yy4wMTEuMjguMTI5LjU0NS4zMy43NGEzLjQ4IDMuNDggMCAwIDAgMy4zNTcuODI4YzIuMTUtLjYzMyAzLjM0LTIuMzYgNC4zNjQtNC40ODVhOS4zIDkuMyAwIDAgMC00LjAyMi0uNzQ2IiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjbCkiIGQ9Ik0yMC44NTggNi4xMjdhNC41MiA0LjUyIDAgMCAwLTIuMzY0IDIuNDMyYy0uMjkyLjgxLS4yNzkgMS43LjAzNiAyLjUuMTE2LjI1Ni4zMjYuNDU2LjU4Ny41NTlhMy40OSAzLjQ5IDAgMCAwIDMuNDE3LS41MjdjMS43NC0xLjQxIDIuMTgtMy40NiAyLjMyNC01LjgyYTkuMyA5LjMgMCAwIDAtNCAuODU2IiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjaykiIGQ9Ik0xNi43OCA0LjQyNmE0LjU1IDQuNTUgMCAwIDAtMS4yNTcgMy4xNTdjLjAzOC44Ni4zODggMS42OC45ODUgMi4yOTYuMjA0LjE5LjQ3NC4yOTUuNzUzLjI5YTMuNDkgMy40OSAwIDAgMCAyLjk1Ny0xLjhjMS4wNy0xLjk3LjY5Ni00LjA0LS4wNy02LjI3MmE5LjMgOS4zIDAgMCAwLTMuMzY4IDIuMzI5IiBvcGFjaXR5PSIuNjUiLz4KCTxwYXRoIGZpbGw9InVybCgjaikiIGQ9Ik0xMi4zNjQgNC40MjJhNC41NSA0LjU1IDAgMCAwIC4wNDEgMy40MDEgMy41IDMuNSAwIDAgMCAxLjc4NSAxLjc0MWMuMjYuMDk4LjU1LjA5LjgwNS0uMDJhMy41NCAzLjU0IDAgMCAwIDEuMzkzLTEuMTNjLjM2LS40OS41ODQtMS4wNy42NTQtMS42Ny4yMzUtMi4yNC0uODk1LTQtMi40NTUtNS43NjdhOS4zNSA5LjM1IDAgMCAwLTIuMjIzIDMuNDQ1IiBvcGFjaXR5PSIuNjUiLz4KCTxkZWZzPgoJCTxsaW5lYXJHcmFkaWVudCBpZD0icCIgeDE9Ii0yLjM1IiB4Mj0iMjkuMzEyIiB5MT0iMzAuMzIiIHkyPSIxLjAwNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgoJCQk8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwQTAwQjIiLz4KCQkJPHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0icmVkIi8+CgkJCTxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGRkMwMCIvPgoJCTwvbGluZWFyR3JhZGllbnQ+CgkJPGxpbmVhckdyYWRpZW50IGlkPSJpIiB4MT0iLTIuMzUiIHgyPSIyOS4zMTIiIHkxPSIzMC4zMjEiIHkyPSIxLjAwNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgoJCQk8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwQTAwQjIiLz4KCQkJPHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0icmVkIi8+CgkJCTxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGRkMwMCIvPgoJCTwvbGluZWFyR3JhZGllbnQ+CgkJPGxpbmVhckdyYWRpZW50IGlkPSJoIiB4MT0iLTIuMzUiIHgyPSIyOS4zMTIiIHkxPSIzMC4zMiIgeTI9IjEuMDA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CgkJCTxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzBBMDBCMiIvPgoJCQk8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSJyZWQiLz4KCQkJPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkZGQzAwIi8+CgkJPC9saW5lYXJHcmFkaWVudD4KCQk8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMi4zNSIgeDI9IjI5LjMxMiIgeTE9IjMwLjMyIiB5Mj0iMS4wMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KCQkJPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMEEwMEIyIi8+CgkJCTxzdG9wIG9mZnNldD0iLjUiIHN0b3AtY29sb3I9InJlZCIvPgoJCQk8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkZDMDAiLz4KCQk8L2xpbmVhckdyYWRpZW50PgoJCTxsaW5lYXJHcmFkaWVudCBpZD0iZiIgeDE9Ii0yLjM1IiB4Mj0iMjkuMzEyIiB5MT0iMzAuMzIiIHkyPSIxLjAwNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgoJCQk8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwQTAwQjIiLz4KCQkJPHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0icmVkIi8+CgkJCTxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGRkMwMCIvPgoJCTwvbGluZWFyR3JhZGllbnQ+CgkJPGxpbmVhckdyYWRpZW50IGlkPSJlIiB4MT0iLTIuMzUiIHgyPSIyOS4zMTIiIHkxPSIzMC4zMiIgeTI9IjEuMDA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CgkJCTxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzBBMDBCMiIvPgoJCQk8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSJyZWQiLz4KCQkJPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkZGQzAwIi8+CgkJPC9saW5lYXJHcmFkaWVudD4KCQk8bGluZWFyR3JhZGllbnQgaWQ9ImQiIHgxPSItMi4zNSIgeDI9IjI5LjMxMiIgeTE9IjMwLjMyIiB5Mj0iMS4wMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KCQkJPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMEEwMEIyIi8+CgkJCTxzdG9wIG9mZnNldD0iLjUiIHN0b3AtY29sb3I9InJlZCIvPgoJCQk8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkZDMDAiLz4KCQk8L2xpbmVhckdyYWRpZW50PgoJCTxsaW5lYXJHcmFkaWVudCBpZD0iYyIgeDE9Ii0yLjM1IiB4Mj0iMjkuMzEyIiB5MT0iMzAuMzIxIiB5Mj0iMS4wMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KCQkJPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMEEwMEIyIi8+CgkJCTxzdG9wIG9mZnNldD0iLjUiIHN0b3AtY29sb3I9InJlZCIvPgoJCQk8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkZDMDAiLz4KCQk8L2xpbmVhckdyYWRpZW50PgoJCTxsaW5lYXJHcmFkaWVudCBpZD0iYiIgeDE9Ii0yLjM1IiB4Mj0iMjkuMzEyIiB5MT0iMzAuMzIiIHkyPSIxLjAwNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgoJCQk8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwQTAwQjIiLz4KCQkJPHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0icmVkIi8+CgkJCTxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGRkMwMCIvPgoJCTwvbGluZWFyR3JhZGllbnQ+CgkJPGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iLTIuMzUiIHgyPSIyOS4zMTIiIHkxPSIzMC4zMiIgeTI9IjEuMDA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CgkJCTxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzBBMDBCMiIvPgoJCQk8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSJyZWQiLz4KCQkJPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkZGQzAwIi8+CgkJPC9saW5lYXJHcmFkaWVudD4KCQk8bGluZWFyR3JhZGllbnQgaWQ9Im8iIHgxPSItMi4zNSIgeDI9IjI5LjMxMiIgeTE9IjMwLjMyIiB5Mj0iMS4wMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KCQkJPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMEEwMEIyIi8+CgkJCTxzdG9wIG9mZnNldD0iLjUiIHN0b3AtY29sb3I9InJlZCIvPgoJCQk8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkZDMDAiLz4KCQk8L2xpbmVhckdyYWRpZW50PgoJCTxsaW5lYXJHcmFkaWVudCBpZD0ibiIgeDE9Ii0yLjM1IiB4Mj0iMjkuMzEyIiB5MT0iMzAuMzIiIHkyPSIxLjAwNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgoJCQk8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwQTAwQjIiLz4KCQkJPHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0icmVkIi8+CgkJCTxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGRkMwMCIvPgoJCTwvbGluZWFyR3JhZGllbnQ+CgkJPGxpbmVhckdyYWRpZW50IGlkPSJtIiB4MT0iLTIuMzUiIHgyPSIyOS4zMTIiIHkxPSIzMC4zMiIgeTI9IjEuMDA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CgkJCTxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzBBMDBCMiIvPgoJCQk8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSJyZWQiLz4KCQkJPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkZGQzAwIi8+CgkJPC9saW5lYXJHcmFkaWVudD4KCQk8bGluZWFyR3JhZGllbnQgaWQ9ImwiIHgxPSItMi4zNSIgeDI9IjI5LjMxMiIgeTE9IjMwLjMyIiB5Mj0iMS4wMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KCQkJPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMEEwMEIyIi8+CgkJCTxzdG9wIG9mZnNldD0iLjUiIHN0b3AtY29sb3I9InJlZCIvPgoJCQk8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkZDMDAiLz4KCQk8L2xpbmVhckdyYWRpZW50PgoJCTxsaW5lYXJHcmFkaWVudCBpZD0iayIgeDE9Ii0yLjM1IiB4Mj0iMjkuMzEyIiB5MT0iMzAuMzIxIiB5Mj0iMS4wMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KCQkJPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMEEwMEIyIi8+CgkJCTxzdG9wIG9mZnNldD0iLjUiIHN0b3AtY29sb3I9InJlZCIvPgoJCQk8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkZDMDAiLz4KCQk8L2xpbmVhckdyYWRpZW50PgoJCTxsaW5lYXJHcmFkaWVudCBpZD0iaiIgeDE9Ii0yLjM1IiB4Mj0iMjkuMzEyIiB5MT0iMzAuMzIiIHkyPSIxLjAwNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgoJCQk8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwQTAwQjIiLz4KCQkJPHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0icmVkIi8+CgkJCTxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGRkMwMCIvPgoJCTwvbGluZWFyR3JhZGllbnQ+Cgk8L2RlZnM+Cjwvc3ZnPgo=" alt="Powered by MediaWiki" lang=en width=25 height=25 loading=lazy srcset sizes></picture></a></li>
+</ul>
+</footer>
+ </div>
+ </div> 
+</div> 
