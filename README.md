@@ -2,6 +2,12 @@
 
 Projeto estatico das paginas de LPs publicadas no servidor local `192.168.0.236`.
 
+Tambem pode ser publicado no GitHub Pages em:
+
+```text
+https://euzebiodev.github.io/biblioteca-infinito-lps/
+```
+
 ## Estrutura
 
 - `index.html` - indice principal da biblioteca.
@@ -20,6 +26,11 @@ Para publicar alteracoes no servidor local, rode:
 ```
 
 O script envia os arquivos para `192.168.0.236` usando `pscp` e reinicia o Nginx.
+
+## Publicacao no GitHub Pages
+
+O site usa caminhos relativos para funcionar tanto no servidor local quanto no GitHub Pages.
+A publicacao no GitHub Pages deve usar a branch `main` e a pasta raiz `/`.
 
 ## CI/CD Jenkins
 
