@@ -21,6 +21,21 @@ Para publicar alteracoes no servidor local, rode:
 
 O script envia os arquivos para `192.168.0.236` usando `pscp` e reinicia o Nginx.
 
+## CI/CD Jenkins
+
+O servidor `192.168.0.236` tem o job Jenkins `biblioteca-infinito-lps-cd`.
+Ele observa somente a branch `main` por polling SCM a cada 5 minutos.
+
+Fluxo:
+
+1. commit e push em `main`;
+2. Jenkins baixa o `Jenkinsfile`;
+3. valida os arquivos principais;
+4. publica o conteudo em `/var/www/html`;
+5. testa e recarrega o Nginx.
+
+Commits em outras branches nao sao publicados.
+
 ## Novas paginas
 
 Para adicionar um novo LP, crie uma pasta no formato:
